@@ -80,3 +80,7 @@
 .btn:hover {
   background: #6c8cff;
 }
+.user-list {
+  margin: 0;
+  list-style: none;
+}
