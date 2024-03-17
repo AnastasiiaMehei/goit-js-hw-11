@@ -14,7 +14,7 @@ fetchUsersBtn.addEventListener('click', () => {
 
 function fetchUsers() {
   return fetch(
-    'https://jsonplaceholder.typicode.com/users?_limit=7&_sort=name'
+    'https://pixabay.com/api/?key=42924833-4b721b8caf67a58fd43475ecb&q=""&image_type=photo&orientation=horizontal&safesearch=true'
   ).then(response => {
     if (!response.ok) {
       throw new Error(response.status);

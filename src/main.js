@@ -1,4 +1,4 @@
-// import { fetchUsers } from './js/pixabay-api';
+import { fetchUsers } from './js/pixabay-api';
 // import { saveForm } from "./api";
 // import { createMarkup } from "./markup";
 
