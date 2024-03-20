@@ -40,11 +40,14 @@ function getEl(query) {
 refs.formEl.addEventListener('submit', e => {
   e.preventDefault();
   const query = e.target.elements.superhero.value;
-  getSuperhero(query).then(data => {
-    const markup = heroTemplate(data);
-    refs.heroEl.insertAdjacentHTML('beforeend', markup);
+  getEl(query).then(data => {
+    const markup = elTemplate(data);
+    refs.infoElEl.insertAdjacentHTML('beforeend', markup);
   });
 })
+function elTemplate(){
+  return <ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+}
 // export const fetchUsersBtn = document.querySelector('.btn');
 // export const form = document.querySelector('form');
 // form.addEventListener('click', evt => {
