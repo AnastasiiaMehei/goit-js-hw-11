@@ -10,7 +10,11 @@ export const refs = {
   inputEl: document.querySelector('form-control'),
   ulEl: document.querySelector('gallery'),
 };
-
+let query = '';
+refs.inputEl.addEventListener('input', e => {
+  query = refs.inputEl.ariaValueMax.trim();
+  refs.ulEl.innerHTML = '';
+});
 const fetchUsersBtn = document.querySelector('.btn');
 fetchUsersBtn.addEventListener('click', e => {
   e.preventDefault();
