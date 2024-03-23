@@ -9,13 +9,24 @@
   </head>
   <body>
    <section class="section">
-    <form class="form" action="">
+    <!-- <form class="form" action="">
       <label class="label">
         <input class="input" type="text" name="text" autofocus >
       </label>
+    </form> -->
+    <form class="form">
+      <div class="form-container">
+        <input
+          type="text"
+          class="form-control"
+          name="query"
+          placeholder="images"
+        />
+      </div>
+      <button type="submit" class="btn">Search</button>
     </form>
     <ul class="gallery"></ul>
-    <button class="btn" type="submit">Search</button>
+    <!-- <button class="btn" type="submit">Search</button> -->
    </section>
    <script type="module" src="./main.js"></script>  
     <script type="module" src="./js/pixabay-api.js"></script>  

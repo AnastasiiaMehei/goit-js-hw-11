@@ -67,15 +67,15 @@
   letter-spacing: 0.04em;
   color: #fff;
   border: none;
-  width: 371px;
+
   height: 40px;
   display: flex;
   flex-direction: row;
   background: #4e75ff;
   border-radius: 8px;
   padding: 8px 16px;
-  width: 91px;
-  height: 40px;
+
+  margin-left: 5px;
 }
 .btn:hover {
   background: #6c8cff;

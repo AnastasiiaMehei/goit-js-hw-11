@@ -7,8 +7,12 @@ import { fetchImages } from '../js';
 refs.formEl.addEventListener('submit', e => {
   fetchImages(query);
   e.preventDefault();
-  const query = refs.formEl.elements.name.value;
+  const query = refs.formEl.elements.query.value;
   console.log(query);
+  fetchImages(query).then(data => {
+    const markup = createGalleryMarkup(data);
+    refs.ulEl.insertAdjacentHTML('beforeend', markup);
+  });
 });
 
 export function createGalleryMarkup(images) {
@@ -28,7 +32,7 @@ export function createGalleryMarkup(images) {
     )
     .join('');
 }
-container.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
+// container.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
