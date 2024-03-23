@@ -11,7 +11,8 @@ export const refs = {
 };
 
 const fetchUsersBtn = document.querySelector('.btn');
-fetchUsersBtn.addEventListener('click', () => {
+fetchUsersBtn.addEventListener('submit', e => {
+  e.preventDefault();
   fetchImages()
     .then(images => renderUsers(images))
     .catch(error => console.log(error));
