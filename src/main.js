@@ -7,12 +7,13 @@ import { fetchImages } from '../js';
 export const refs = {
   formEl: document.querySelector('form'),
   formCont: document.querySelector('form-container'),
-  inputEl: document.querySelector('form-control'),
   ulEl: document.querySelector('gallery'),
 };
 let query = '';
-refs.inputEl.addEventListener('input', e => {
-  query = refs.inputEl.value.trim();
+const inQuery = document.querySelector('search-input');
+inQuery.addEventListener('input', e => {
+  e.preventDefault();
+  query = inQuery.value.trim();
   refs.ulEl.innerHTML = '';
 });
 const fetchUsersBtn = document.querySelector('.btn');

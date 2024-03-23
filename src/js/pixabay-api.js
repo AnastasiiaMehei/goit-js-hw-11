@@ -5,7 +5,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 // функція, яка виконує запит на сервер
 export function fetchImages(query) {
   const BASE_URL = 'https://pixabay.com';
-  const END_POINT = '/api';
+  const END_POINT = '/api/';
   const params = new URLSearchParams({
     key: '42924833-4b721b8caf67a58fd43475ecb',
     q: query,
