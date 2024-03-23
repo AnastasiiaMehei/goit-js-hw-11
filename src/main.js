@@ -8,10 +8,11 @@ export const refs = {
   formEl: document.querySelector('form'),
   formCont: document.querySelector('form-container'),
 };
-let query = '';
+export let query = '';
 const galleryList = document.querySelector('gallery');
 const inQuery = document.querySelector('form-control');
 inQuery.addEventListener('input', e => {
+  e.preventDefault();
   query = inQuery.value.trim();
   galleryList.innerHTML = '';
 });
