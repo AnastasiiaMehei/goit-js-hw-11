@@ -9,15 +9,15 @@ export function renderImages(query) {
   refs.ulEl.innerHTML = '';
 }
 
-refs.formEl.addEventListener('submit', e => {
-  fetchImages(query);
-  e.preventDefault();
-  const query = refs.formEl.elements.query.value;
-  fetchImages(query).then(data => {
-    const markup = createGalleryMarkup(data);
-    refs.ulEl.insertAdjacentHTML('beforeend', markup);
-  });
-});
+// refs.formEl.addEventListener('submit', e => {
+//   fetchImages(query);
+//   e.preventDefault();
+//   const query = refs.formEl.elements.query.value;
+//   fetchImages(query).then(data => {
+//     const markup = createGalleryMarkup(data);
+//     refs.ulEl.insertAdjacentHTML('beforeend', markup);
+//   });
+// });
 
 function createGalleryMarkup(images) {
   return images
