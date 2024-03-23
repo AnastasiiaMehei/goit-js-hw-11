@@ -17,8 +17,8 @@ export function fetchImages(query) {
   const options = {
     method: 'GET',
   };
-  //  return fetch(url, options).then(res=>res.json());
-  fetch(url, options)
+  // return fetch(url, options).then(res => res.json());
+  return fetch(url, options)
     .then(response => {
       if (!response.ok) {
         throw new Error(response.status);
