@@ -4,11 +4,15 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from '../main';
 import { fetchImages } from '../js';
+
+export function renderImages(data) {
+  refs.ulEl.innerHTML = '';
+}
+
 refs.formEl.addEventListener('submit', e => {
   fetchImages(query);
   e.preventDefault();
   const query = refs.formEl.elements.query.value;
-  console.log(query);
   fetchImages(query).then(data => {
     const markup = createGalleryMarkup(data);
     refs.ulEl.insertAdjacentHTML('beforeend', markup);

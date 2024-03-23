@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-// функція, яка виконує запит
+// функція, яка виконує запит на сервер
 export function fetchImages(query) {
   const BASE_URL = 'https://pixabay.com';
   const END_POINT = '/api';
