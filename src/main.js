@@ -20,6 +20,7 @@ const fetchUsersBtn = document.querySelector('.btn');
 fetchUsersBtn.addEventListener('click', e => {
   e.preventDefault();
   if (query) {
+    refs.ulEl.innerHTML = '<div class="loader"></div>';
     fetchImages(query)
       .then(data => renderImages(data))
       .catch(error => {

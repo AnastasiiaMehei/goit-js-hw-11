@@ -5,7 +5,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from '../main';
 
 export function renderImages(data) {
-  refs.ulEl.innerHTML = '<div class="loader"></div>';
+  refs.ulEl.innerHTML = '';
   console.log(data);
   const images = data.hits;
   if (images.length == 0) {
