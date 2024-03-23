@@ -3,7 +3,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchImages } from '../src/js/pixabay-api';
-// import { createGalleryMarkup } from '../js';
 export const refs = {
   formEl: document.querySelector('form'),
   formCont: document.querySelector('form-container'),
@@ -27,7 +26,8 @@ fetchUsersBtn.addEventListener('click', e => {
           title: 'Error',
           backgroundColor: 'red',
           position: 'topRight',
-          message: 'Please try again!',
+          message:
+            'Please Sorry, there are no images matching your search query. Please try again! again!',
         })
       );
   }
