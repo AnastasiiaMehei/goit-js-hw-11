@@ -5,7 +5,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from '../main';
 import { fetchImages } from '../js';
 
-export function renderImages(data) {
+export function renderImages(query) {
   refs.ulEl.innerHTML = '';
 }
 
