@@ -9,8 +9,8 @@ export function fetchImages(query) {
   const params = new URLSearchParams({
     key: '42924833-4b721b8caf67a58fd43475ecb',
     q: query,
-    image_type: photo,
-    orientation: horizontal,
+    image_type: 'photo',
+    orientation: 'horizontal',
     safesearch: true,
   });
   const url = `${BASE_URL}${END_POINT}?${params}`;
@@ -28,7 +28,7 @@ export function fetchImages(query) {
     .catch(error => {
       iziToast.error({
         backgroundColor: 'red',
-        position: 'topRight',
+        position: 'topCenter',
         title: 'Error',
         message:
           'Sorry, there are no images matching your search query. Please try again!',
