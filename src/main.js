@@ -18,7 +18,16 @@ refs.inputEl.addEventListener('input', e => {
 const fetchUsersBtn = document.querySelector('.btn');
 fetchUsersBtn.addEventListener('click', e => {
   e.preventDefault();
-  fetchImages(query)
-    .then(images => renderUsers(images))
-    .catch(error => console.log(error));
+  if (query) {
+    fetchImages(query)
+      .then(images => renderUsers(images))
+      .catch(error =>
+        iziToast.error({
+          title: 'Error',
+          backgroundColor: 'red',
+          position: 'topRight',
+          message: 'Please try again!',
+        })
+      );
+  }
 });
