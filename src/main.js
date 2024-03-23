@@ -12,7 +12,7 @@ export const refs = {
 };
 let query = '';
 refs.inputEl.addEventListener('input', e => {
-  query = refs.inputEl.ariaValueMax.trim();
+  query = refs.inputEl.query.trim();
   refs.ulEl.innerHTML = '';
 });
 const fetchUsersBtn = document.querySelector('.btn');
