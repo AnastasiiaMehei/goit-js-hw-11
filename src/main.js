@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import { fetchImages } from '../js';
+import { fetchImages } from '../src/js/pixabay-api';
 // import { createGalleryMarkup } from '../js';
 export const refs = {
   formEl: document.querySelector('form'),
@@ -10,7 +10,7 @@ export const refs = {
   ulEl: document.querySelector('gallery'),
 };
 let query = '';
-const inQuery = document.querySelector('search-input');
+const inQuery = document.querySelector('form-control');
 inQuery.addEventListener('input', e => {
   e.preventDefault();
   query = inQuery.value.trim();

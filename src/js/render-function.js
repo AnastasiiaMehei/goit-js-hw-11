@@ -3,7 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from '../main';
-import { fetchImages } from '../js';
+import { fetchImages } from '../src/js/pixabay-api';
 
 export function renderImages(query) {
   refs.ulEl.innerHTML = '';
