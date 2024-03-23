@@ -3,26 +3,41 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from '../main';
-import { fetchImages } from '../src/js/pixabay-api';
 
-export function renderImages(query) {
+export function renderImages(data) {
   refs.ulEl.innerHTML = '';
-}
+  console.log(data);
+  const images = data.hits;
+  if (images.length == 0) {
+    iziToast.error({
+      title: 'Error',
+      message: `Error: No such pictures!`,
+      position: 'topRight',
+    });
+  }
 
-// refs.formEl.addEventListener('submit', e => {
-//   fetchImages(query);
-//   e.preventDefault();
-//   const query = refs.formEl.elements.query.value;
-//   fetchImages(query).then(data => {
-//     const markup = createGalleryMarkup(data);
-//     refs.ulEl.insertAdjacentHTML('beforeend', markup);
-//   });
-// });
+  refs.ulEl.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
+  const galleryCfg = {
+    captionsData: 'alt',
+    captionDelay: 250,
+  };
+  let lightbox = new SimpleLightbox('.gallery a', galleryCfg);
+  lightbox.on('show.simplelightbox', function () {});
+  lightbox.refresh();
+}
 
 function createGalleryMarkup(images) {
   return images
     .map(
-      ({ webformatURL, largeImageURL, tags }) => `
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => `
       <li class="gallery-item">
       <a class="gallery-link" href="${largeImageURL}">
         <img       
@@ -32,18 +47,12 @@ function createGalleryMarkup(images) {
         />
       </a>
     </li>
-    <li><h3>likes</h3><p>${images.likes}</p><li/>
-    <li><h3>views</h3><p>${images.views}</p><li/>
-    <li><h3>comments</h3><p>${images.comments}</p><li/>  
-    <li><h3>downloads</h3><p>${images.downloads}</p><li/>  
+    <li><h3>likes</h3><p>${likes}</p><li/>
+    <li><h3>views</h3><p>${views}</p><li/>
+    <li><h3>comments</h3><p>${comments}</p><li/>  
+    <li><h3>downloads</h3><p>${downloads}</p><li/>  
   `
     )
     .join('');
 }
 // container.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
-lightbox.on('show.simplelightbox', function () {});
