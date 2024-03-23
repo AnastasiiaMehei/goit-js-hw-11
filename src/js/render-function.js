@@ -5,7 +5,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { refs } from '../main';
 
 export function renderImages(data) {
-  refs.ulEl.innerHTML = '';
+  refs.ulEl.innerHTML = '<div class="loader"></div>';
   console.log(data);
   const images = data.hits;
   if (images.length == 0) {
@@ -45,12 +45,13 @@ function createGalleryMarkup(images) {
           src="${webformatURL}"
           alt="${tags}"
         />
+        <ul class="img-description"><li class><h3>Likes</h3><p>${likes}</p><li/>
+        <li><h3>Views</h3><p>${views}</p><li/>
+        <li><h3>Comments</h3><p>${comments}</p><li/>  
+        <li><h3>Downloads</h3><p>${downloads}</p><li/></ul>
       </a>
     </li>
-    <li><h3>likes</h3><p>${likes}</p><li/>
-    <li><h3>views</h3><p>${views}</p><li/>
-    <li><h3>comments</h3><p>${comments}</p><li/>  
-    <li><h3>downloads</h3><p>${downloads}</p><li/>  
+     
   `
     )
     .join('');
