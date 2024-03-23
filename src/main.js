@@ -7,14 +7,14 @@ import { fetchImages } from '../src/js/pixabay-api';
 export const refs = {
   formEl: document.querySelector('form'),
   formCont: document.querySelector('form-container'),
+  inputEl: document.querySelector('input.form-control'),
+  ulEl: document.querySelector('ul.gallery'),
 };
 export let query = '';
-const galleryList = document.querySelector('gallery');
-const inQuery = document.querySelector('form-control');
-inQuery.addEventListener('input', e => {
+refs.inputEl.addEventListener('input', e => {
   e.preventDefault();
-  query = inQuery.value.trim();
-  galleryList.innerHTML = '';
+  query = refs.inputEl.value.trim();
+  refs.ulEl.innerHTML = '';
 });
 const fetchUsersBtn = document.querySelector('.btn');
 fetchUsersBtn.addEventListener('click', e => {
